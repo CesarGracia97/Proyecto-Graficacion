@@ -95,7 +95,23 @@
 								</section>
 							</section>
 					</div>
-
+					
+					<script type="text/javascript">
+					function enviar(){
+						var name =document.getElementById("name").value;
+						var mail =document.getElementById("email").value;
+						var msg =document.getElementById("message").value;
+						Email.send({
+    						Host : "smtp.gmail.com",
+    						Username : "dara.saud.98@gmail.com",
+   							Password : "DaraUnlimited98",
+   							To : 'ces.ze.97@gmail.com',
+    						From : mail,
+    						Subject : "Comentario",
+    						Body : "message"
+							}).then(message => alert(message));
+						}
+					</script>
 				<!-- Contact -->
 					<section id="contact">
 						<div class="inner">
@@ -116,7 +132,7 @@
 										</div>
 									</div>
 									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="button" id="boton" value="Send Message" onclick="enviar()" /></li>
 										<li><input type="reset" value="Clear" /></li>
 									</ul>
 								</form>
@@ -170,6 +186,7 @@
 			</div>
 
 		<!-- Scripts -->
+			<script src="https://smtpjs.com/v3/smtp.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
