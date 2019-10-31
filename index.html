@@ -110,21 +110,7 @@
 									</header>
 								</article>
 							</section>
-
-						<!-- Two -->
-							<section id="two">
-								<div class="inner">
-									<header class="major">
-										<h2>Massa libero</h2>
-									</header>
-									<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
-									<ul class="actions">
-										<li><a href="landing.html" class="button next">Get Started</a></li>
-									</ul>
-								</div>
-							</section>
-
-					</div>
+						</div>
 
 				<!-- Contact -->
 				<section id="contact">
@@ -146,7 +132,7 @@
 									</div>
 								</div>
 								<ul class="actions">
-									<li><input type="submit" value="Send Message" class="primary" /></li>
+									<li><input type="button" id="boton" value="Send Message" onclick="enviar()" /></li>
 									<li><input type="reset" value="Clear" /></li>
 								</ul>
 							</form>
@@ -180,7 +166,23 @@
 						</section>
 					</div>
 				</section>
-
+				<!-- Funcion Enviar-->
+				<script type="text/javascript">
+					function enviar(){
+						var name =document.getElementById("name").value;
+						var mail =document.getElementById("email").value;
+						var msg =document.getElementById("message").value;
+						Email.send({
+    						Host : "smtp.gmail.com",
+    						Username : "dara.saud.98@gmail.com",
+   							Password : "DaraUnlimited98",
+   							To : 'ces.ze.97@gmail.com',
+    						From : mail,
+    						Subject : "Comentario",
+    						Body : msg
+							}).then(message => alert(message));
+						}
+					</script>
 				<!-- Footer -->
 					<footer id="footer">
 						<div class="inner">
@@ -200,6 +202,7 @@
 			</div>
 
 		<!-- Scripts -->
+			<script src="https://smtpjs.com/v3/smtp.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>

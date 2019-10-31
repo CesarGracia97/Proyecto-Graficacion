@@ -68,7 +68,7 @@
 						<!-- Two -->
 							<section id="two" class="spotlights">
 								<section>
-									<a href="generic.html" class="image">
+									
 										<img src="images/Screenshot_1.png" alt="" data-position="center center" />
 									</a>
 									<div class="content">
@@ -81,7 +81,7 @@
 									</div>
 								</section>
 								<section>
-									<a href="generic.html" class="image">
+									
 										<img src="images/Screenshot_2.png" alt="" data-position="top center" />
 									</a>
 									<div class="content">
@@ -95,23 +95,6 @@
 								</section>
 							</section>
 					</div>
-					
-					<script type="text/javascript">
-					function enviar(){
-						var name =document.getElementById("name").value;
-						var mail =document.getElementById("email").value;
-						var msg =document.getElementById("message").value;
-						Email.send({
-    						Host : "smtp.gmail.com",
-    						Username : "dara.saud.98@gmail.com",
-   							Password : "DaraUnlimited98",
-   							To : 'ces.ze.97@gmail.com',
-    						From : mail,
-    						Subject : "Comentario",
-    						Body : "message"
-							}).then(message => alert(message));
-						}
-					</script>
 				<!-- Contact -->
 					<section id="contact">
 						<div class="inner">
@@ -166,7 +149,23 @@
 							</section>
 						</div>
 					</section>
-
+				<!-- Funcion Enviar-->
+				<script type="text/javascript">
+					function enviar(){
+						var name =document.getElementById("name").value;
+						var mail =document.getElementById("email").value;
+						var msg =document.getElementById("message").value;
+						Email.send({
+    						Host : "smtp.gmail.com",
+    						Username : "dara.saud.98@gmail.com",
+   							Password : "DaraUnlimited98",
+   							To : 'ces.ze.97@gmail.com',
+    						From : mail,
+    						Subject : "Comentario",
+    						Body : msg
+							}).then(message => alert(message));
+						}
+					</script>
 				<!-- Footer -->
 					<footer id="footer">
 						<div class="inner">
